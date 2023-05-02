@@ -5,6 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -36,7 +37,12 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex"></div>
-        <div className="navbar-end">
+        <div className="navbar-end space-x-4">
+          <img
+            className="w-12 h-12  rounded-full"
+            src={user?.photoURL}
+            alt=""
+          />
           {user ? (
             <Link onClick={handleLogOut} to="/home" className="btn">
               LogOut
