@@ -9,6 +9,8 @@ import Login from "./components/Login/Login.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import Register from "./components/Register/Register.jsx";
 import ViewRecipe from "./components/ViewRecipe/ViewRecipe.jsx";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const router = createBrowserRouter([
   {
@@ -45,5 +47,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer position="top-center" autoClose={3000} />
   </React.StrictMode>
 );

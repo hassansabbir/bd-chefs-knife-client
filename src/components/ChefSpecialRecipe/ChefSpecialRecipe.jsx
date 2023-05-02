@@ -1,6 +1,12 @@
 import React from "react";
+import { FaHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ChefSpecialRecipe = ({ dish }) => {
+  const addToFavButton = () => {
+    toast.success("Recipe added to your favorites Successfully!");
+  };
+
   const { name, dishImg, description, ingredients, instructions } = dish;
   console.log(dish);
   return (
@@ -27,6 +33,14 @@ const ChefSpecialRecipe = ({ dish }) => {
             </p>
           </div>
         </div>
+        <button
+          onClick={() => {
+            addToFavButton();
+          }}
+          className="btn gap-2 hover:bg-emerald-500 hover:border-emerald-500"
+        >
+          Add to Favorites <FaHeart />
+        </button>
       </div>
     </div>
   );

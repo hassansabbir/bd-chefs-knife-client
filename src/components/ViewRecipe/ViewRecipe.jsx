@@ -9,7 +9,9 @@ const ViewRecipe = () => {
     <div>
       <ChefBanner viewRecipe={viewRecipe}></ChefBanner>
       <div>
-        <h2 className="text-4xl my-10 ">Some of Chefs Special Recipes</h2>
+        <h2 className="text-4xl my-10 ">
+          Some of {viewRecipe.name}'s Special Recipes
+        </h2>
         <div className="grid gap-10 my-10">
           {viewRecipe.dishes.map((dish, i) => (
             <ChefSpecialRecipe dish={dish} key={i}></ChefSpecialRecipe>
