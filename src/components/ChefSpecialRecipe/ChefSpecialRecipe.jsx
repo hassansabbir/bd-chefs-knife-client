@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const ChefSpecialRecipe = ({ dish }) => {
+  const [disabled, setDisabled] = useState(false);
   const addToFavButton = () => {
+    setDisabled(true);
     toast.success("Recipe added to your favorites Successfully!");
   };
 
@@ -37,6 +39,7 @@ const ChefSpecialRecipe = ({ dish }) => {
           onClick={() => {
             addToFavButton();
           }}
+          disabled={disabled}
           className="btn gap-2 hover:bg-emerald-500 hover:border-emerald-500"
         >
           Add to Favorites <FaHeart />

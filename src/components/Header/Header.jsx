@@ -26,7 +26,9 @@ const Header = () => {
         </div>
         <div className="navbar-center hidden lg:flex"></div>
         <div className="navbar-end">
-          <Link className="btn">Login</Link>
+          <Link to="/login" className="btn">
+            Login
+          </Link>
         </div>
       </div>
     </div>
