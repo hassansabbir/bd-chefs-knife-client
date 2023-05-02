@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Banner from "./Banner";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -29,18 +30,12 @@ const Header = () => {
           <Link className="mx-4" to="/blog">
             Blog
           </Link>
-          <Link className="mx-4" to="/login">
-            Login
-          </Link>
-          <Link className="mx-4" to="/register">
-            Register
-          </Link>
         </div>
         <div className="navbar-center hidden lg:flex"></div>
         <div className="navbar-end space-x-4">
           <img
-            className="w-12 h-12  rounded-full"
-            src={user?.photoURL}
+            className="w-12 h-12 rounded-full"
+            src={user ? user.photoURL : <FaUserCircle />}
             alt=""
           />
           {user ? (

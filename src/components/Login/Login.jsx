@@ -39,6 +39,7 @@ const Login = () => {
         const loggedUser = res.user;
         console.log(loggedUser);
         setUser(loggedUser);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);
