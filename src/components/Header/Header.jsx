@@ -5,7 +5,7 @@ import Banner from "./Banner";
 const Header = () => {
   return (
     <div>
-      <div className="navbar bg-gray-300">
+      <div className="navbar bg-neutral-600 text-white">
         <div className="navbar-start">
           <div className="dropdown"></div>
           <a className="btn btn-ghost normal-case text-xl">BD Chefs Knife</a>

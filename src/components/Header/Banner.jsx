@@ -15,11 +15,11 @@ const Banner = () => {
           All The Best Chefs in Bangladesh Are Here{" "}
         </h2>
         <p className="w-3/4 ml-16 mt-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          Before After dolor sit amet consectetur adipisicing elit. Perferendis
           et, nobis facere perspiciatis quam accusantium laudantium
           exercitationem commodi explicabo non?
         </p>
-        <a className="link link-neutral flex items-center gap-2 ml-56 text-4xl text-white">
+        <a className="link link-neutral hover:text-gray-400 flex items-center gap-2 ml-56 text-4xl text-white">
           Know more about us <FaArrowRight />
         </a>
       </div>
