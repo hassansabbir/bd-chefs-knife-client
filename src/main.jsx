@@ -8,6 +8,7 @@ import Home from "./components/Home/Home.jsx";
 import Login from "./components/Login/Login.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import Register from "./components/Register/Register.jsx";
+import ViewRecipe from "./components/ViewRecipe/ViewRecipe.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
         path: "/home",
         element: <Home></Home>,
         loader: () => fetch("http://localhost:5000/chefs"),
+      },
+      {
+        path: "/chefs/:id",
+        element: <ViewRecipe></ViewRecipe>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/chefs/${params.id}`),
       },
       {
         path: "/blog",

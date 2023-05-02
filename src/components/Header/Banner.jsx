@@ -9,7 +9,10 @@ const Banner = () => {
       <img style={{ width: "100%" }} src={bannerImg} alt="" />
       <div className="absolute top-20 right-80 text-white">
         <h1 className="text-7xl ml-36 mb-10 flex">
-          BD Chefs Knife <GiForkKnifeSpoon />
+          BD Chefs
+          <span className="text-emerald-500 flex">
+            Knife <GiForkKnifeSpoon />
+          </span>
         </h1>
         <h2 className="text-4xl ml-32 w-7/12">
           All The Best Chefs in Bangladesh Are Here{" "}

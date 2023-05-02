@@ -29,7 +29,6 @@ const Header = () => {
           <Link className="btn">Login</Link>
         </div>
       </div>
-      <Banner></Banner>
     </div>
   );
 };
