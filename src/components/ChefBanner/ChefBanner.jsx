@@ -26,8 +26,8 @@ const ChefBanner = ({ viewRecipe }) => {
           <h4 className="text-2xl flex gap-5">
             <span className="text-emerald-500">Awards: </span>
             <div>
-              {awards.map((a) => (
-                <li>{a}</li>
+              {awards.map((a, i) => (
+                <li key={i}>{a}</li>
               ))}
             </div>
           </h4>
