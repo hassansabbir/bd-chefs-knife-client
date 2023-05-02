@@ -12,6 +12,7 @@ import ViewRecipe from "./components/ViewRecipe/ViewRecipe.jsx";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import AuthProvider from "./providers/AuthProvider.jsx";
+import PrivetRout from "./components/PrivetRout/PrivetRout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chefs/:id",
-        element: <ViewRecipe></ViewRecipe>,
+        element: (
+          <PrivetRout>
+            <ViewRecipe></ViewRecipe>
+          </PrivetRout>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/chefs/${params.id}`),
       },

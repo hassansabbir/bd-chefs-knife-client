@@ -1,11 +1,53 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page location", location);
+  const from = location.state?.from?.pathname || "/home";
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((res) => {
+        const loggedUser = res.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const provider = new GoogleAuthProvider();
+  const handleGoogleLogin = () => {
+    googleSignIn(provider)
+      .then((res) => {
+        const loggedUser = res.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <form onSubmit={handleLogin} className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -18,6 +60,8 @@ const Login = () => {
                 </label>
                 <input
                   type="text"
+                  name="email"
+                  required
                   placeholder="email"
                   className="input input-bordered"
                 />
@@ -27,7 +71,9 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
+                  name="password"
+                  required
                   placeholder="password"
                   className="input input-bordered"
                 />
@@ -37,8 +83,14 @@ const Login = () => {
                   </a>
                 </label>
               </div>
+              <div>
+                <p className="text-red-600">{error}</p>
+              </div>
               <div className="">
-                <button className="btn w-64 btn-outline btn-info gap-2">
+                <button
+                  onClick={handleGoogleLogin}
+                  className="btn w-64 btn-outline btn-info gap-2"
+                >
                   <FaGoogle /> Login with Google
                 </button>
                 <button className="btn w-64 mt-3 btn-outline gap-2">
@@ -57,7 +109,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

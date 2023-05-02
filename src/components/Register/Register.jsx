@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, profileUpdate } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleRegister = (event) => {
     event.preventDefault();
+    setError("");
     const form = event.target;
     const name = form.name.value;
     const photoUrl = form.photoUrl.value;
@@ -14,6 +16,27 @@ const Register = () => {
     const password = form.password.value;
 
     console.log(name, photoUrl, email, password);
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    profileUpdate({ displayName: name, photoURL: photoUrl })
+      .then(() => {
+        console.log("Username updated successfully");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   return (
@@ -73,6 +96,7 @@ const Register = () => {
                   className="input input-bordered"
                 />
               </div>
+              <p>{error}</p>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register</button>
                 <small>
