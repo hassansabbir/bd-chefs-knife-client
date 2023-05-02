@@ -33,11 +33,13 @@ const Header = () => {
         </div>
         <div className="navbar-center hidden lg:flex"></div>
         <div className="navbar-end space-x-4">
-          <img
-            className="w-12 h-12 rounded-full"
-            src={user ? user.photoURL : <FaUserCircle />}
-            alt=""
-          />
+          <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+            <img
+              className="w-12 h-12 rounded-full"
+              src={user ? user.photoURL : <FaUserCircle />}
+              alt=""
+            />
+          </div>
           {user ? (
             <Link onClick={handleLogOut} to="/home" className="btn">
               LogOut

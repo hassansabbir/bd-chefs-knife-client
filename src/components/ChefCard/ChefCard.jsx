@@ -31,7 +31,7 @@ const ChefCard = ({ chef }) => {
             <p className="text-xl">Recipe: {recipe} Items.</p>
           </div>
           <Link to={`/chefs/${id}`}>
-            <button className="btn btn-outline">View Recipe</button>
+            <button className="btn btn-outline btn-success">View Recipe</button>
           </Link>
         </div>
       </div>
