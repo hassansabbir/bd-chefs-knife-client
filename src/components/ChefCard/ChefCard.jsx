@@ -1,24 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
+import "./ChefCard.css";
 
 const ChefCard = ({ chef }) => {
-  const {
-    id,
-    name,
-    badge,
-    photoUrl,
-    Likes,
-    recipe,
-    Experience,
-    awards,
-    specialty,
-  } = chef;
+  const { id, name, badge, photoUrl, Likes, recipe, Experience } = chef;
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl">
-        <figure>
+        <LazyLoad threshold={0.99}>
           <img className="h-72" src={photoUrl} alt="Shoes" />
-        </figure>
+        </LazyLoad>
         <div className="card-body">
           <h2 className="card-title font-bold text-xl">
             {name}

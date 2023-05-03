@@ -23,7 +23,8 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/chefs"),
+        loader: () =>
+          fetch("https://bd-chefs-knife-server-hassansabbir.vercel.app/chefs"),
       },
       {
         path: "/chefs/:id",
@@ -33,7 +34,9 @@ const router = createBrowserRouter([
           </PrivetRout>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chefs/${params.id}`),
+          fetch(
+            `https://bd-chefs-knife-server-hassansabbir.vercel.app/chefs/${params.id}`
+          ),
       },
       {
         path: "/blog",

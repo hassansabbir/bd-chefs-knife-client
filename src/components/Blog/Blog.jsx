@@ -4,10 +4,23 @@ import "./Blog.css";
 
 const ref = React.createRef();
 
+const options = {
+  orientation: "portrait",
+  unit: "in",
+  format: [16, 12],
+};
+
 const Blog = () => {
   return (
     <div className="App">
-      <Pdf targetRef={ref} filename="code-example.pdf">
+      <Pdf
+        targetRef={ref}
+        options={options}
+        x={0.5}
+        y={0.5}
+        scale={0.8}
+        filename="code-example.pdf"
+      >
         {({ toPdf }) => (
           <button className="btn my-5  btn-success" onClick={toPdf}>
             Generate Pdf
