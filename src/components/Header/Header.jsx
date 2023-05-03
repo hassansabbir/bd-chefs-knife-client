@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Banner from "./Banner";
 import { AuthContext } from "../../providers/AuthProvider";
-import { FaUserCircle } from "react-icons/fa";
+import ActiveLink from "../Activelink/ActiveLink";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -23,13 +22,13 @@ const Header = () => {
           <div className="dropdown"></div>
           <a className="btn btn-ghost normal-case text-xl">BD Chefs Knife</a>
         </div>
-        <div>
-          <Link className="mx-4" to="/home">
+        <div className="space-x-10">
+          <ActiveLink className="mx-4" to="/home">
             Home
-          </Link>
-          <Link className="mx-4" to="/blog">
-            Blog
-          </Link>
+          </ActiveLink>
+          <ActiveLink className="mx-4" to="/blog">
+            Blogs
+          </ActiveLink>
         </div>
         <div className="navbar-center hidden lg:flex"></div>
         <div className="navbar-end space-x-4">
