@@ -6,7 +6,7 @@ import { GiGrapes } from "react-icons/gi";
 
 const GoodFood = () => {
   return (
-    <div className="flex items-center my-52">
+    <div className="lg:flex items-center my-52">
       <img className="w-6/12" src={foodBowl} alt="" />
       <div className="text-left">
         <h2 className="text-4xl">Its all about</h2>

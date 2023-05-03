@@ -7,7 +7,7 @@ import AreUChef from "../AreUChef/AreUChef";
 
 const Home = () => {
   const chefsData = useLoaderData();
-  console.log(chefsData);
+  // console.log(chefsData);
   return (
     <div>
       <Banner></Banner>

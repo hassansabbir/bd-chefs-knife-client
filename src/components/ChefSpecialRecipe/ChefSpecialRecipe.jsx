@@ -10,7 +10,7 @@ const ChefSpecialRecipe = ({ dish }) => {
   };
 
   const { name, dishImg, description, ingredients, instructions } = dish;
-  console.log(dish);
+  // console.log(dish);
   return (
     <div>
       <div className="border-2 w-3/4 mx-auto rounded-3xl p-3 border-emerald-500">
