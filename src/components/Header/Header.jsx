@@ -34,11 +34,13 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex"></div>
         <div className="navbar-end space-x-4">
           <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-            <img
-              className="w-12 h-12 rounded-full"
-              src={user ? user.photoURL : <FaUserCircle />}
-              alt=""
-            />
+            {user && (
+              <img
+                className="w-12 h-12 rounded-full"
+                src={user.photoURL}
+                alt=""
+              />
+            )}
           </div>
           {user ? (
             <Link onClick={handleLogOut} to="/home" className="btn">

@@ -19,7 +19,9 @@ const AreUChef = () => {
         <h2 className="text-5xl mt-8 text-left">Apply Now!!</h2>
         <div className="mt-5 text-left w-10/12 lg:flex gap-20">
           <div className="indicator">
-            <span className="indicator-item badge">15% off! Now</span>
+            <span className="indicator-item hidden lg:block badge">
+              15% off! Now
+            </span>
             <input
               type="text"
               placeholder="Your email address"

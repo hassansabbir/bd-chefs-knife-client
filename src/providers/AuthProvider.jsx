@@ -28,13 +28,14 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const profileUpdate = (name, photoUrl) => {
-    updateProfile(auth.currentUser, { name, photoUrl });
+  const googleSignIn = (googleProvider) => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
   };
 
-  const googleSignIn = (provider) => {
+  const gitHubSignIn = (gitHubProvider) => {
     setLoading(true);
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, gitHubProvider);
   };
 
   const logOut = () => {
@@ -58,8 +59,8 @@ const AuthProvider = ({ children }) => {
     loading,
     createUser,
     signIn,
-    profileUpdate,
     googleSignIn,
+    gitHubSignIn,
     logOut,
   };
   return (

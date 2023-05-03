@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -32,9 +32,23 @@ const Login = () => {
       });
   };
 
-  const provider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
-    googleSignIn(provider)
+    googleSignIn(googleProvider)
+      .then((res) => {
+        const loggedUser = res.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const gitHubProvider = new GithubAuthProvider();
+  const handleGitHubLogin = () => {
+    gitHubSignIn(gitHubProvider)
       .then((res) => {
         const loggedUser = res.user;
         console.log(loggedUser);
@@ -94,7 +108,10 @@ const Login = () => {
                 >
                   <FaGoogle /> Login with Google
                 </button>
-                <button className="btn w-64 mt-3 btn-outline gap-2">
+                <button
+                  onClick={handleGitHubLogin}
+                  className="btn w-64 mt-3 btn-outline gap-2"
+                >
                   <FaGithub /> Login with GitHub
                 </button>
               </div>
