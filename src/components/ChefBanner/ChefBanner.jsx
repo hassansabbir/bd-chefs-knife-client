@@ -2,25 +2,21 @@ import React from "react";
 import { FaThumbsUp } from "react-icons/fa";
 
 const ChefBanner = ({ viewRecipe }) => {
-  const {
-    name,
-    photoUrl,
-    specialty,
-    awards,
-    Experience,
-    recipe,
-    Likes,
-    dishes,
-  } = viewRecipe;
+  const { name, photoUrl, specialty, awards, Experience, recipe, Likes, bio } =
+    viewRecipe;
   return (
     <div>
       <div className="flex justify-around items-center shadow-2xl">
-        <img className="w-5/12 " src={photoUrl} alt="" />
-        <div className="text-left">
+        <img className="w-5/12 ml-5" src={photoUrl} alt="" />
+        <div className="text-left my-20 ml-36">
           <h2 className="text-2xl">
             Meet <span className="text-emerald-500">C</span>hef
           </h2>
           <h2 className="text-7xl mb-10">{name}</h2>
+          <h5 className="w-3/4 my-8 text-xl">
+            <span className="text-2xl text-emerald-500">Bio:</span> <br />
+            {bio}
+          </h5>
           <h4 className="text-2xl">
             <span className="text-emerald-500">Specialty: </span>
             {specialty}

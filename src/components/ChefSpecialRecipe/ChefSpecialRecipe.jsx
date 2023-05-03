@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaStar, FaStarHalf, FaStarHalfAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const ChefSpecialRecipe = ({ dish }) => {
@@ -9,7 +9,8 @@ const ChefSpecialRecipe = ({ dish }) => {
     toast.success("Recipe added to your favorites Successfully!");
   };
 
-  const { name, dishImg, description, ingredients, instructions } = dish;
+  const { name, dishImg, description, rating, ingredients, instructions } =
+    dish;
   // console.log(dish);
   return (
     <div>
@@ -32,6 +33,17 @@ const ChefSpecialRecipe = ({ dish }) => {
             <p className="my-5">
               <span className="text-xl font-bold">How to Cook:</span> <br />
               {instructions}
+            </p>
+            <p className="my-5 flex items-center gap-3 text-xl font-bold">
+              Ratings:{" "}
+              <div className="flex">
+                <FaStar className="text-emerald-500" />
+                <FaStar className="text-emerald-500" />
+                <FaStar className="text-emerald-500" />
+                <FaStar className="text-emerald-500" />
+                <FaStarHalfAlt className="text-emerald-500" />
+              </div>{" "}
+              {rating}
             </p>
           </div>
         </div>

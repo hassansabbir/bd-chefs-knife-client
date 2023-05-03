@@ -29,6 +29,9 @@ const Login = () => {
       })
       .catch((err) => {
         console.log(err);
+        if (err.message === "Firebase: Error (auth/wrong-password).") {
+          setError("Wrong password! Please try again.");
+        }
       });
   };
 
@@ -98,9 +101,7 @@ const Login = () => {
                   </a>
                 </label>
               </div>
-              <div>
-                <p className="text-red-600">{error}</p>
-              </div>
+              <p className="text-red-500 font-bold">{error}</p>
               <div className="">
                 <button
                   onClick={handleGoogleLogin}
