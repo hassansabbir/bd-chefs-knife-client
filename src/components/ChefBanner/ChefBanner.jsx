@@ -6,8 +6,8 @@ const ChefBanner = ({ viewRecipe }) => {
     viewRecipe;
   return (
     <div>
-      <div className="flex justify-around items-center shadow-2xl">
-        <img className="w-5/12 ml-5" src={photoUrl} alt="" />
+      <div className="flex justify-around rounded-xl items-center shadow-2xl">
+        <img className="w-5/12 ml-10 my-10 rounded-xl" src={photoUrl} alt="" />
         <div className="text-left my-20 ml-36">
           <h2 className="text-2xl">
             Meet <span className="text-emerald-500">C</span>hef

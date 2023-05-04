@@ -18,12 +18,16 @@ const ChefSpecialRecipe = ({ dish }) => {
         <h2 className="text-4xl mb-3">{name}</h2>
         <div className="flex gap-10 items-center justify-around ">
           <img
+            className="rounded-2xl"
             style={{ width: "400px", height: "400px" }}
             src={dishImg}
             alt=""
           />
           <div className="w-3/6 text-left">
-            <h2 className="my-5">{description}</h2>
+            <h2 className="my-5">
+              <span className="text-xl font-bold">Description:</span> <br />{" "}
+              {description}
+            </h2>
             <h2>
               <span className="font-bold text-xl my-5">Ingredients:</span>
               {ingredients.map((ing, i) => (

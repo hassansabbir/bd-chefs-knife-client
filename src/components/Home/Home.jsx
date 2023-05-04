@@ -13,8 +13,8 @@ const Home = () => {
       <Banner></Banner>
       <GoodFood></GoodFood>
       <div className="my-10">
-        <h2 className="font-bold text-5xl ">
-          Our <span className="text-emerald-500">C</span>hefs
+        <h2 className="font-bold mb-5 text-5xl ">
+          Our <span className="text-emerald-500 underline">C</span>hefs
         </h2>
         <div className="grid lg:grid-cols-3 gap-10">
           {chefsData.map((chef) => (

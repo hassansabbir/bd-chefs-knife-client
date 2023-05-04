@@ -3,7 +3,7 @@ import chefImg from "../../../public/14669964_5499390.jpg";
 
 const AreUChef = () => {
   return (
-    <div className="lg:flex items-center my-10">
+    <div className="lg:flex px-5 lg:px-0 items-center my-10">
       <img className="w-3/6" src={chefImg} alt="" />
       <div>
         <h2 className="text-5xl text-left">
@@ -25,7 +25,7 @@ const AreUChef = () => {
             <input
               type="text"
               placeholder="Your email address"
-              className="input input-bordered w-96"
+              className="input input-bordered border-emerald-500 lg:w-96 "
             />
           </div>
           <button className="btn w-40 btn-success">Apply</button>

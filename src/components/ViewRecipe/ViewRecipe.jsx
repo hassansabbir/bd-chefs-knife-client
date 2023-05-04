@@ -10,7 +10,11 @@ const ViewRecipe = () => {
       <ChefBanner viewRecipe={viewRecipe}></ChefBanner>
       <div>
         <h2 className="text-4xl my-10 ">
-          Some of {viewRecipe.name}'s Special Recipes
+          Some of{" "}
+          <span className="text-emerald-500 italic underline">
+            {viewRecipe.name}'s
+          </span>{" "}
+          Special Recipes
         </h2>
         <div className="grid gap-10 my-10">
           {viewRecipe.dishes.map((dish, i) => (

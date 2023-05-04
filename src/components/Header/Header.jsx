@@ -20,10 +20,10 @@ const Header = () => {
       <div className="navbar bg-neutral-600 text-white">
         <div className="navbar-start">
           <div className="dropdown"></div>
-          <a className="btn btn-ghost normal-case text-xl">BD Chefs Knife</a>
+          <a className="btn btn-ghost normal-case text-3xl">BD Chefs Knife</a>
         </div>
         <div className="space-x-10">
-          <ActiveLink className="mx-4" to="/home">
+          <ActiveLink className="mx-4" to="/">
             Home
           </ActiveLink>
           <ActiveLink className="mx-4" to="/blog">
@@ -42,7 +42,7 @@ const Header = () => {
             )}
           </div>
           {user ? (
-            <Link onClick={handleLogOut} to="/home" className="btn">
+            <Link onClick={handleLogOut} to="/" className="btn">
               LogOut
             </Link>
           ) : (

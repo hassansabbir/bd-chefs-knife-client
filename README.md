@@ -1,3 +1,5 @@
+## Live Link: https://bd-chefs-knife.web.app/
+
 React Authentication Assignment 10
 Project name: BD Chefs Knife
 
@@ -24,5 +26,7 @@ In this Milestone I learned about Authentication using firebase. Using firebase 
 * There is a page named "Blogs", where you can find some answers of some frequently asked questions. If you want to save the question and answer section, there is a button at the top of the page called "Generate PDF". By clicking this button website will make a PDF file of the blogs page and download it in your browser.
 
 * The Home page is fully responsive.
+
+* In the home page I used Lazy Load on the photos of chefs card images. When you scroll down fully , then the images will load and you will be able to see the images.
 
 * I used some photo for decorating the website , and it looks very vibrant in my eyes. I used some reasonable banner and footer in the website.

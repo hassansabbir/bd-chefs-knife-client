@@ -7,9 +7,13 @@ const ChefCard = ({ chef }) => {
   const { id, name, badge, photoUrl, Likes, recipe, Experience } = chef;
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl">
+      <div className="card w-96 flex border mx-auto bg-base-100 shadow-xl hover:shadow-2xl">
         <LazyLoad threshold={0.99}>
-          <img className="h-72" src={photoUrl} alt="Shoes" />
+          <img
+            className="h-72 rounded-xl shadow-lg mx-auto"
+            src={photoUrl}
+            alt="Shoes"
+          />
         </LazyLoad>
         <div className="card-body">
           <h2 className="card-title font-bold text-xl">
@@ -23,7 +27,9 @@ const ChefCard = ({ chef }) => {
             <p className="text-xl">Recipe: {recipe} Items.</p>
           </div>
           <Link to={`/chefs/${id}`}>
-            <button className="btn btn-outline btn-success">View Recipe</button>
+            <button className="btn shadow-lg btn-outline btn-success">
+              View Recipe
+            </button>
           </Link>
         </div>
       </div>
